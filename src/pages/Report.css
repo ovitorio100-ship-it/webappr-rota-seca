@@ -1,0 +1,114 @@
+.report-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+}
+
+.report-map-section {
+  height: 30vh;
+  position: relative;
+}
+
+.map-instruction {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--card-bg);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  box-shadow: var(--shadow-sm);
+  z-index: 400;
+  white-space: nowrap;
+}
+
+.draggable-marker .pin {
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid white;
+  box-shadow: var(--shadow-sm);
+}
+
+.draggable-marker .pulse {
+  width: 16px;
+  height: 8px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -4px;
+  left: 4px;
+  filter: blur(2px);
+}
+
+.report-form {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.level-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.level-card.selected {
+  border-color: var(--accent);
+  background-color: #F0F7FF;
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.level-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.text-orange { color: #E67E22; }
+.text-danger-dark { color: #C0392B; }
+
+.level-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.btn-camera {
+  width: 100%;
+  padding: 14px;
+  border: 2px dashed #CBD5E1;
+  border-radius: 12px;
+  background-color: #F8FAFC;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.report-success {
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.pulse-animation {
+  animation: pulse-success 2s infinite;
+}
+
+@keyframes pulse-success {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}

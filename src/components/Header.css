@@ -1,0 +1,58 @@
+.app-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 100;
+}
+
+.app-header.transparent {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+  box-shadow: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-left, .header-right {
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.back-btn {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: -8px;
+}

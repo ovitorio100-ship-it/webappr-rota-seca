@@ -1,0 +1,42 @@
+.bottom-sheet {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.bottom-sheet.expanded {
+  height: calc(100vh - 120px);
+}
+
+.sheet-handle-area {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sheet-handle {
+  width: 48px;
+  height: 6px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.sheet-content {
+  padding: 0 20px 20px 20px;
+  flex: 1;
+  overflow-y: auto;
+}

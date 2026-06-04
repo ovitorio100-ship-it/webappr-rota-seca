@@ -1,0 +1,113 @@
+.active-nav-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-map-wrapper {
+  flex: 1;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+.nav-header {
+  position: absolute;
+  top: env(safe-area-inset-top, 20px);
+  left: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.nav-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  background: var(--gradient-primary);
+}
+
+.nav-instruction {
+  flex: 1;
+}
+
+.nav-warnings {
+  position: absolute;
+  top: 110px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.nav-warning-badge {
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-bottom-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 24px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.btn-end-route {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  transition: transform 0.2s;
+}
+
+.btn-end-route:active {
+  transform: scale(0.95);
+}
+
+/* Simulated GPS Car Arrow */
+.car-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--accent);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  position: relative;
+}
+
+.car-arrow::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid white;
+}

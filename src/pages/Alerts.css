@@ -1,0 +1,34 @@
+.alerts-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.alerts-list {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid transparent;
+}
+
+.alert-card.critical { border-left-color: var(--danger); }
+.alert-card.warning { border-left-color: var(--alert); }
+.alert-card.success { border-left-color: var(--success); }
+.alert-card.info { border-left-color: var(--accent); }
+
+.alert-icon {
+  margin-top: 2px;
+}
+
+.alert-content {
+  flex: 1;
+}

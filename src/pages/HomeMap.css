@@ -1,0 +1,221 @@
+.home-container {
+  height: 100vh;
+  position: relative;
+}
+
+.map-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.map-header {
+  position: absolute;
+  top: env(safe-area-inset-top, 20px);
+  left: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.profile-btn, .notification-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.location-badge {
+  padding: 8px 16px;
+  border-radius: 24px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--danger);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.fab-report {
+  position: absolute;
+  bottom: 230px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 400;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fab-report:active {
+  transform: scale(0.95);
+}
+
+.action-btn-container {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  z-index: 400;
+}
+
+/* Custom Marker CSS */
+.custom-map-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pin {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.marker-icon {
+  transform: rotate(45deg);
+  font-size: 14px;
+}
+
+.marker-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid;
+  animation: pulse 2s infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 4px;
+}
+
+.popup-content {
+  min-width: 180px;
+}
+
+.badge-level {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: white;
+}
+.badge-level.leve { background-color: var(--alert); }
+.badge-level.moderado { background-color: #E67E22; }
+.badge-level.grave { background-color: var(--danger); }
+
+/* Predictive Modal */
+.predictive-modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(2px);
+}
+
+.predictive-modal {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+}
+
+.icon-warning {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg-alert-light { background-color: rgba(245, 166, 35, 0.1); }
+
+.badge-alert {
+  background-color: var(--alert);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: table;
+  margin: 0 auto;
+}
+
+.divider {
+  height: 1px;
+  background-color: #E2E8F0;
+}
+
+.risk-point {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #F8FAFC;
+}
+.risk-point:last-child { border-bottom: none; }
+
+.risk-point .dot {
+  width: 10px; height: 10px; border-radius: 50%; margin-right: 12px;
+}
+.risk-point .name { flex: 1; font-size: 14px; }
+.risk-point .prob { font-size: 14px; font-weight: 600; color: var(--danger); }
+
+/* Status dots */
+.status-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.status-dot.leve { background-color: var(--alert); }
+.status-dot.moderado { background-color: #E67E22; }
+.status-dot.grave { background-color: var(--danger); }
